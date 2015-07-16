@@ -9,9 +9,13 @@ module.exports = function (tape) {
   var Test = tape.Test;
 
   Object.defineProperty(Test.prototype, 'drain', {
-    get: function drain(opts) {
+    get: function drainWrap(opts) {
       var t = this;
       opts = opts || {};
+
+      var drain = function () {
+        return drainWrap.apply(this, arguments);
+      };
 
       var concatOpts = {
         encoding: opts.buffer ? 'buffer' : 'string'
