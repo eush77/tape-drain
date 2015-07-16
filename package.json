@@ -1,0 +1,45 @@
+{
+  "name": "tape-drain",
+  "version": "0.0.0",
+  "description": "Consume readable streams automatically for tape testing",
+  "author": "Eugene Sharygin <eush77@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/eush77/tape-drain",
+  "repository": "eush77/tape-drain",
+  "bugs": {
+    "url": "https://github.com/eush77/tape-drain/issues"
+  },
+  "keywords": [
+    "tape",
+    "plugin",
+    "test",
+    "drain",
+    "consume",
+    "concat",
+    "readable",
+    "stream",
+    "assert",
+    "content",
+    "data",
+    "buffer",
+    "read",
+    "wrapper",
+    "async",
+    "util"
+  ],
+  "dependencies": {
+    "concat-stream": "^1.5.0",
+    "is-stream": "^1.0.1",
+    "map-async": "^0.1.1"
+  },
+  "devDependencies": {
+    "stread": "^1.0.0",
+    "tape": "^4.0.0"
+  }
+}
