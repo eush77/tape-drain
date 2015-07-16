@@ -4,7 +4,9 @@
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
-Consume readable streams automatically for tape testing.
+Consume readable streams automatically for [tape] testing.
+
+[tape]: https://github.com/substack/tape
 
 [travis]: https://travis-ci.org/eush77/tape-drain
 [travis-badge]: https://travis-ci.org/eush77/tape-drain.svg
