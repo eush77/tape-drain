@@ -9,9 +9,13 @@ module.exports = function (tape) {
   var Test = tape.Test;
 
   Object.defineProperty(Test.prototype, 'drain', {
-    get: function () {
+    get: function drain(opts) {
       var t = this;
-      var drain = Object.create(Test.prototype);
+      opts = opts || {};
+
+      var concatOpts = {
+        encoding: opts.buffer ? 'buffer' : 'string'
+      };
 
       Object.keys(t).forEach(function (methodName) {
         var method = t[methodName];
@@ -22,7 +26,7 @@ module.exports = function (tape) {
 
             map(args, function (arg, cb) {
               isStream.readable(arg)
-                ? arg.pipe(concat({ encoding: 'string' }, cb.bind(null, null)))
+                ? arg.pipe(concat(concatOpts, cb.bind(null, null)))
                 : cb(null, arg);
             }, function (err, args) {
               if (err) throw err;
