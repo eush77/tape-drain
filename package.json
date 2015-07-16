@@ -1,6 +1,6 @@
 {
   "name": "tape-drain",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Consume readable streams automatically for tape testing",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
