@@ -4,7 +4,23 @@
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
-Consume readable streams automatically for [tape] testing.
+Plugin for [tape] that adds wrappers for assertion methods that automatically consume streams in the argument position.
+
+Write
+
+```js
+t.drain.equal(stream, 'data');
+```
+
+instead of
+
+```js
+stream.pipe({ encoding: 'string' }, function (data) {
+  t.equal(data, 'data');
+});
+```
+
+Less boilerplate, cleaner tests!
 
 [tape]: https://github.com/substack/tape
 
