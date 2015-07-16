@@ -41,6 +41,8 @@ Adds `tape.Test.prototype.drain` and returns modified `tape` instance.
 
 Consumes any streams passed in the arguments and calls the original `method` with stream arguments replaced with their actual content.
 
+Note that the drain wrapper is asynchronous, and so you should use `t.plan` rather than `t.end` when using it.
+
 #### `t.drain([opts])['method']`
 
 Options:
