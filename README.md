@@ -15,9 +15,9 @@ t.drain.equal(stream, 'data');
 instead of
 
 ```js
-stream.pipe({ encoding: 'string' }, function (data) {
+stream.pipe(concat({ encoding: 'string' }, function (data) {
   t.equal(data, 'data');
-});
+}));
 ```
 
 Less boilerplate, cleaner tests!
